@@ -3,7 +3,24 @@
     "displayName": "Abell Language Features",
     "description": "Syntax Highlighting for .abell files to help you make static sites even faster",
     "version": "0.0.1",
-    "repository": "https://github.com/abelljs/vscode-abell-language-features",
+    "publisher": "saurabh",
+    "author": {
+		"name": "saurabhdaware"
+    },
+    "icon": "images/logo-512.png",
+    "galleryBanner": {
+        "color": "#f9f9f9"
+    },
+    "license": "MIT",
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/abelljs/vscode-abell-language-features.git"
+    },
+    "homepage": "https://github.com/abelljs/vscode-abell-language-features/blob/master/README.md",
+	"bugs": {
+		"url": "https://github.com/abelljs/vscode-abell-language-features/issues",
+		"email": "saurabhdaware99@gmail.com"
+	}, 
     "engines": {
         "vscode": "^1.44.0"
     },
