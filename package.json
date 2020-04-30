@@ -1,0 +1,31 @@
+{
+    "name": "abell-language-features",
+    "displayName": "Abell Language Features",
+    "description": "Syntax Highlighting for .abell files to help you make static sites even faster",
+    "version": "0.0.1",
+    "repository": "https://github.com/abelljs/vscode-abell-language-features",
+    "engines": {
+        "vscode": "^1.44.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "abell",
+            "aliases": ["Abell", "abell"],
+            "extensions": [".abell"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [
+            {
+                "language": "abell",
+                "scopeName": "source.abell",
+                "path": "./syntaxes/abell.tmLanguage.json",
+                "embeddedLanguages": {
+                    "text.html.basic": "html"
+                }
+            }
+        ]
+    }
+}

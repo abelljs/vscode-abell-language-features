@@ -1,0 +1,58 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Abell",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "text.html.basic"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"begin": "{{",
+			"end": "}}",
+			"name": "variable.name",
+			"patterns": [
+				{
+					"name": "keyword.control.abell",
+					"match": "\\b(import_content)\\b"
+				},
+				{
+					"name": "keyword.control.abell",
+					"match": "(#|/|^)"
+				},
+				{
+					"name": "string.quoted.double.abell",
+					"begin": "[\"']",
+					"end": "[\"']",
+					"patterns": [
+						{
+							"name": "constant.character.escape.abell",
+							"match": "\\\\."
+						},
+						{
+							"name": "variable.name",
+							"match": "{{.*?}}"
+						}
+					]
+				}
+			]
+		},
+		"strings": {
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "variable.name",
+					"match": "{{.*?}}"
+				}
+			]
+		}
+	},
+	"scopeName": "source.abell"
+}
