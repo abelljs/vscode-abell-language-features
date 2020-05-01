@@ -4,6 +4,13 @@ All notable changes to the "abell-syntax-highlight" extension will be documented
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## Releases
 
-- Initial release
+### 0.0.2
+
+Added highlighting for brackets
+
+### 0.0.1
+
+Initial release with minimal features.
+

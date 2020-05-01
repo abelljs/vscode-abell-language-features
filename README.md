@@ -14,11 +14,7 @@ Syntax Highlighting for .abell files to make abell specific commands like import
 
 ## Release Notes
 
-
-### 0.0.1
-
-Initial release with minimal features.
-
+Release notes are mentioned in [CHANGELOG.md](CHANGELOG.md)
 
 -----------------------------------------------------------------------------------------------------------
 
