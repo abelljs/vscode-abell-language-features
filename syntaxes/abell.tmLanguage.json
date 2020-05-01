@@ -16,11 +16,22 @@
 		"keywords": {
 			"begin": "{{",
 			"end": "}}",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.tag.begin.html"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.tag.end.html"
+				}
+			},
 			"name": "variable.name",
 			"patterns": [
 				{
 					"name": "keyword.control.abell",
-					"match": "\\b(import_content)\\b"
+					"match": "\\b(import_content)\\b",
+					"comment": "Imports markdown content from path. REMEMBER: The paths are relative to your content directory!"
 				},
 				{
 					"name": "keyword.control.abell",
