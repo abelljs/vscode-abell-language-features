@@ -40,7 +40,8 @@
                 "scopeName": "source.abell",
                 "path": "./syntaxes/abell.tmLanguage.json",
                 "embeddedLanguages": {
-                    "text.html.basic": "html"
+                    "text.html.basic": "html",
+                    "source.js": "javascript"
                 }
             }
         ]

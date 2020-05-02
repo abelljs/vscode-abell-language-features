@@ -3,13 +3,13 @@
 	"name": "Abell",
 	"patterns": [
 		{
+			"include": "text.html.basic"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
 			"include": "#strings"
-		},
-		{
-			"include": "text.html.basic"
 		}
 	],
 	"repository": {
@@ -34,10 +34,6 @@
 					"comment": "Imports markdown content from path. REMEMBER: The paths are relative to your content directory!"
 				},
 				{
-					"name": "keyword.control.abell",
-					"match": "(#|/|^)"
-				},
-				{
 					"name": "string.quoted.double.abell",
 					"begin": "[\"']",
 					"end": "[\"']",
@@ -51,6 +47,9 @@
 							"match": "{{.*?}}"
 						}
 					]
+				},
+				{
+					"include": "source.js"
 				}
 			]
 		},
