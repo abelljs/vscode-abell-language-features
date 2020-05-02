@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## Releases
 
+### 0.0.3
+
+Support for JS-in-HTML
+
 ### 0.0.2
 
 Added highlighting for brackets
