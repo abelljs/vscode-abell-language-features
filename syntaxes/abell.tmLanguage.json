@@ -29,37 +29,7 @@
 			"name": "variable.name",
 			"patterns": [
 				{
-					"name": "keyword.control.abell",
-					"match": "\\b(import_content)\\b",
-					"comment": "Imports markdown content from path. REMEMBER: The paths are relative to your content directory!"
-				},
-				{
-					"name": "string.quoted.double.abell",
-					"begin": "[\"']",
-					"end": "[\"']",
-					"patterns": [
-						{
-							"name": "constant.character.escape.abell",
-							"match": "\\\\."
-						},
-						{
-							"name": "variable.name",
-							"match": "{{.*?}}"
-						}
-					]
-				},
-				{
 					"include": "source.js"
-				}
-			]
-		},
-		"strings": {
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "variable.name",
-					"match": "{{.*?}}"
 				}
 			]
 		}
