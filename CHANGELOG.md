@@ -2,9 +2,10 @@
 
 All notable changes to the "abell-syntax-highlight" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
 ## Releases
+
+### 0.0.4
+Support for `import_content` command removed.
 
 ### 0.0.3
 
