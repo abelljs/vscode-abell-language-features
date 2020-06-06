@@ -4,6 +4,9 @@ All notable changes to the "abell-syntax-highlight" extension will be documented
 
 ## Releases
 
+### 0.0.6
+Refactored Code
+
 ### 0.0.5
 Ignoring brackets that start with slash (\\)
 
