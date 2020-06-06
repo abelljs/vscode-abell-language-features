@@ -6,14 +6,11 @@
 			"include": "text.html.basic"
 		},
 		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
+			"include": "#highlight-javascript"
 		}
 	],
 	"repository": {
-		"keywords": {
+		"highlight-javascript": {
 			"begin": "(?<!\\\\){{",
 			"end": "}}",
 			"beginCaptures": {
@@ -26,7 +23,7 @@
 					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"name": "variable.name",
+			"contentName": "meta.embedded.block.javascript",
 			"patterns": [
 				{
 					"include": "source.js"

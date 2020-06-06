@@ -41,7 +41,7 @@
                 "path": "./syntaxes/abell.tmLanguage.json",
                 "embeddedLanguages": {
                     "text.html.basic": "html",
-                    "source.js": "javascript"
+                    "meta.embedded.block.javascript": "javascript"
                 }
             }
         ]
