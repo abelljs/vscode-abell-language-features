@@ -16,7 +16,7 @@
 		"type": "git",
 		"url": "https://github.com/abelljs/vscode-abell-language-features.git"
     },
-    "homepage": "https://github.com/abelljs/vscode-abell-language-features/blob/master/README.md",
+    "homepage": "https://github.com/abelljs/vscode-abell-language-features/blob/main/README.md",
 	"bugs": {
 		"url": "https://github.com/abelljs/vscode-abell-language-features/issues",
 		"email": "saurabhdaware99@gmail.com"
