@@ -3,6 +3,9 @@
 	"name": "Abell",
 	"patterns": [
 		{
+			"include": "#highlight-components"
+		},
+		{
 			"include": "text.html.basic"
 		},
 		{
@@ -10,6 +13,33 @@
 		}
 	],
 	"repository": {
+		"highlight-components": {
+			"begin": "<([A-Z][a-z]* )",
+			"end": "/>",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.tag.begin.html"
+				},
+				"1": {
+					"name": "entity.name.tag"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.tag.end.html"
+				}
+			},
+			"contentName": "meta.embedded.block.javascript",
+			"patterns": [
+				{
+					"match": "props",
+					"name": "entity.other.attribute-name"
+				},
+				{
+					"include": "source.js"
+				}
+			]
+		},
 		"highlight-javascript": {
 			"begin": "(?<!\\\\){{",
 			"end": "}}",

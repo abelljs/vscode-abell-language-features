@@ -4,6 +4,9 @@ All notable changes to the "abell-syntax-highlight" extension will be documented
 
 ## Releases
 
+### 0.0.7
+Support for Abell Components
+
 ### 0.0.6
 Refactored Code
 
