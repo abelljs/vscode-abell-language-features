@@ -9,13 +9,46 @@
 			"include": "text.html.basic"
 		},
 		{
-			"include": "#highlight-javascript"
+			"include": "#highlight-abell-block"
 		}
 	],
 	"repository": {
+		"highlight-html-block": {
+			"begin": "/\\* *?html ?\\*/ *?`",
+			"end": "`",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.tag.begin.html"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.tag.end.html"
+				}
+			},
+			"patterns": [
+				{
+					"begin": "\\$\\{",
+					"end": "}",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.tag.begin.html"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.tag.end.html"
+						}
+					}
+				},
+				{
+					"include": "text.html.basic"
+				}
+			]
+		},
 		"highlight-components": {
-			"begin": "<([A-Z][a-z]* )",
-			"end": "/>",
+			"begin": "</?([A-Z][A-Za-z]* ?)",
+			"end": "/?>",
 			"beginCaptures": {
 				"0": {
 					"name": "punctuation.definition.tag.begin.html"
@@ -29,7 +62,7 @@
 					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"contentName": "meta.embedded.block.javascript",
+			"contentName": "components.abell",
 			"patterns": [
 				{
 					"match": "props",
@@ -40,7 +73,7 @@
 				}
 			]
 		},
-		"highlight-javascript": {
+		"highlight-abell-block": {
 			"begin": "(?<!\\\\){{",
 			"end": "}}",
 			"beginCaptures": {
@@ -55,6 +88,38 @@
 			},
 			"contentName": "meta.embedded.block.javascript",
 			"patterns": [
+				{
+					"begin": ".map(\\()(\\(?)(.*?)(\\)?) (=>)",
+					"end": "\\)",
+					"beginCaptures": {
+						"0": {
+							"name": "entity.name.function"
+						},
+						"1": {
+							"name": "none"
+						},
+						"2": {
+							"name": "punctuation.definition.tag.begin.html"
+						},
+						"3": {
+							"name": "variable.parameter"
+						},
+						"4": {
+							"name": "punctuation.definition.tag.end.html"
+						},
+						"5": {
+							"name": "string.html"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#highlight-html-block"
+						}
+					]
+				},
+				{
+					"include": "#highlight-html-block"
+				},
 				{
 					"include": "source.js"
 				}
