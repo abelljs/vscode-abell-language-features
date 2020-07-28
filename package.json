@@ -2,7 +2,7 @@
     "name": "abell-language-features",
     "displayName": "Abell Language Features",
     "description": "Syntax Highlighting for .abell files to help you make static sites even faster",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "publisher": "saurabh",
     "author": {
 		"name": "saurabhdaware"
@@ -40,7 +40,6 @@
                 "scopeName": "source.abell",
                 "path": "./syntaxes/abell.tmLanguage.json",
                 "embeddedLanguages": {
-                    "text.html.basic": "html",
                     "meta.embedded.block.javascript": "javascript"
                 }
             }
