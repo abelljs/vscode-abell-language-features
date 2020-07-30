@@ -84,54 +84,12 @@ async function validateTextDocument(textDocument: TextDocument) {
 	}
 }
 
-// const execRegexOnAll = (regex: RegExp, template: string) => {
-//   /** allMatches holds all the results of RegExp.exec() */
-//   const allMatches = [];
-//   let match = regex.exec(template);
-//   if (!match) {
-//     return { matches: [], input: template };
-//   }
-
-//   const { input } = match;
-
-//   while (match !== null) {
-//     delete match.input;
-//     allMatches.push(match);
-//     match = regex.exec(template);
-//   }
-
-//   return { matches: allMatches, input };
-// };
-
-
-
-// function isCursorInAbellBlock(text: string, position: {line: number, character: number}): boolean {
-// 	const { matches } = execRegexOnAll(/{{(.+?)}}/g, text);
-// 	const positionOffset = text
-// 		.split('\n')
-// 		.slice(0, position.line)
-// 		.reduce((prev:number, item:string) => prev + item.length, 0) + position.line + position.character;
-		
-// 	for (const match of matches) {
-// 		const blockStart = match.index;
-// 		const blockEnd = match[0].length + match.index;
-// 		if (positionOffset > blockStart && positionOffset < blockEnd) {
-// 			return true;
-// 		}
-// 	}
-
-// 	return false;
-// }
 
 connection.onCompletion(async (textDocumentPosition, token) => {
 	const document = documents.get(textDocumentPosition.textDocument.uri);
 	if (!document) {
 		return null;
 	}
-
-	// if (isCursorInAbellBlock(document.getText(), textDocumentPosition.position)) {
-	// 	return null;
-	// }
 
 	const mode = languageModes.getModeAtPosition(document, textDocumentPosition.position);
 	if (!mode || !mode.doComplete) {
