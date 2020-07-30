@@ -4,6 +4,9 @@ All notable changes to the "abell-syntax-highlight" extension will be documented
 
 ## Releases
 
+### 0.0.13
+Major update! Support for HTML, CSS advance language features (auto-complete, suggestions)
+
 ### 0.0.12
 Snippets added `component` and `html`
 
