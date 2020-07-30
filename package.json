@@ -2,7 +2,7 @@
     "name": "abell-language-features",
     "displayName": "Abell Language Features",
     "description": "Syntax Highlighting for .abell files to help you make static sites even faster",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "publisher": "saurabh",
     "author": {
 		"name": "saurabhdaware"
@@ -35,6 +35,11 @@
             "configuration": "./language-configuration.json"
         }],
         "grammars": [
+            {
+                "path": "./syntaxes/html-injections.json",
+                "scopeName": "abell-in-html.injection",
+                "injectTo": ["source.abell"]
+            },
             {
                 "path": "./syntaxes/js-injections.json",
                 "scopeName": "html-in-js.injection",

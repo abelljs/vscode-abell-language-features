@@ -4,6 +4,12 @@ All notable changes to the "abell-syntax-highlight" extension will be documented
 
 ## Releases
 
+### 0.0.11
+Abell block inside HTML String highlight. 
+```html
+<meta name="{{ This will be highlighted }}">
+``` 
+
 ### 0.0.10
 Highlighting fix for HTML inside JS inside HTML which is inside JS which is inside Abell
 
