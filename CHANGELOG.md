@@ -4,6 +4,9 @@ All notable changes to the "abell-syntax-highlight" extension will be documented
 
 ## Releases
 
+### 0.0.10
+Highlighting fix for HTML inside JS inside HTML which is inside JS which is inside Abell
+
 ### 0.0.9 MAJOR WIN!
 Finally adds highlighting for HTML inside JS strings 🎉
 
