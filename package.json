@@ -36,6 +36,11 @@
         }],
         "grammars": [
             {
+                "path": "./syntaxes/js-injections.json",
+                "scopeName": "html-in-js.injection",
+                "injectTo": ["source.abell"]
+            },
+            {
                 "language": "abell",
                 "scopeName": "source.abell",
                 "path": "./syntaxes/abell.tmLanguage.json",

@@ -14,39 +14,6 @@
 		}
 	],
 	"repository": {
-		"highlight-html-block": {
-			"begin": "/\\* *?html ?\\*/ *?`",
-			"end": "`",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.definition.tag.begin.html"
-				}
-			},
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.definition.tag.end.html"
-				}
-			},
-			"patterns": [
-				{
-					"begin": "\\$\\{",
-					"end": "}",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.tag.begin.html"
-						}
-					},
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.tag.end.html"
-						}
-					}
-				},
-				{
-					"include": "text.html.basic"
-				}
-			]
-		},
 		"highlight-components": {
 			"begin": "</?([A-Z][A-Za-z]* ?)",
 			"end": "/?>",
@@ -89,9 +56,6 @@
 			},
 			"contentName": "meta.embedded.block.javascript",
 			"patterns": [
-				{
-					"include": "#highlight-html-block"
-				},
 				{
 					"include": "source.js"
 				}
