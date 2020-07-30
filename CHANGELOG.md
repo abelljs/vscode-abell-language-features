@@ -4,6 +4,9 @@ All notable changes to the "abell-syntax-highlight" extension will be documented
 
 ## Releases
 
+### 0.0.12
+Snippets added `component` and `html`
+
 ### 0.0.11
 Abell block inside HTML String highlight. 
 ```html

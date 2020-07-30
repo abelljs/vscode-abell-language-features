@@ -2,7 +2,7 @@
     "name": "abell-language-features",
     "displayName": "Abell Language Features",
     "description": "Syntax Highlighting for .abell files to help you make static sites even faster",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "publisher": "saurabh",
     "author": {
 		"name": "saurabhdaware"
@@ -25,7 +25,8 @@
         "vscode": "^1.44.0"
     },
     "categories": [
-        "Programming Languages"
+        "Programming Languages",
+        "Snippets"
     ],
     "contributes": {
         "languages": [{
@@ -52,6 +53,12 @@
                 "embeddedLanguages": {
                     "meta.embedded.block.javascript": "javascript"
                 }
+            }
+        ],
+        "snippets": [
+            {
+                "language": "abell",
+                "path": "./snippets/snippets.json"
             }
         ]
     }
