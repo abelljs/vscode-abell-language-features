@@ -1,6 +1,6 @@
 {
   "scopeName": "abell-in-html.injection",
-  "injectionSelector": "L:string.quoted.double.html, L:string.quoted.single.html",
+  "injectionSelector": "L:string.quoted.double.html, L:string.quoted.single.html, L:source.css",
   "patterns": [
     {
       "include": "#highlight-abell-block"

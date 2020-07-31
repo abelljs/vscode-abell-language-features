@@ -6,7 +6,6 @@
 import {
 	CompletionList,
 	createConnection,
-	Diagnostic,
 	InitializeParams,
 	ProposedFeatures,
 	TextDocuments,
@@ -47,43 +46,6 @@ connection.onInitialize((_params: InitializeParams) => {
 });
 
 connection.onInitialized(() => {});
-
-connection.onDidChangeConfiguration(_change => {
-	// Revalidate all open text documents
-	documents.all().forEach(validateTextDocument);
-});
-
-// The content of a text document has changed. This event is emitted
-// when the text document first opened or when its content has changed.
-documents.onDidChangeContent(change => {
-	validateTextDocument(change.document);
-});
-
-async function validateTextDocument(textDocument: TextDocument) {
-	try {
-		const version = textDocument.version;
-		const diagnostics: Diagnostic[] = [];
-		if (textDocument.languageId === 'abell') {
-			const modes = languageModes.getAllModesInDocument(textDocument);
-			const latestTextDocument = documents.get(textDocument.uri);
-			if (latestTextDocument && latestTextDocument.version === version) {
-				// check no new version has come in after in after the async op
-				modes.forEach(mode => {
-					if (mode.doValidation) {
-						mode.doValidation(latestTextDocument).forEach(d => {
-							diagnostics.push(d);
-						});
-					}
-				});
-				connection.sendDiagnostics({ uri: latestTextDocument.uri, diagnostics });
-			}
-		}
-	} catch (e) {
-		connection.console.error(`Error while validating ${textDocument.uri}`);
-		connection.console.error(e);
-	}
-}
-
 
 connection.onCompletion(async (textDocumentPosition, token) => {
 	const document = documents.get(textDocumentPosition.textDocument.uri);
