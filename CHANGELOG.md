@@ -4,6 +4,8 @@ All notable changes to the "abell-syntax-highlight" extension will be documented
 
 ## Releases
 
+### 0.0.15
+
 ### 0.0.14
 - Removed CSS errors and warnings (They were clashing with Abell syntax and idk how to fix :/)
 - Support of Abell block highlighting in CSS

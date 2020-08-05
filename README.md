@@ -8,7 +8,9 @@ Syntax Highlighting for `.abell` files.
 ## Features
 
 - Syntax Highlighting for `.abell` files
-
+- Support for HTML blocks inside JavaScript strings inside Abell Blocks
+- Support for Abell Components
+- Support for Abell Markdown 
 
 ## Release Notes
 

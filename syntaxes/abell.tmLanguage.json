@@ -4,6 +4,9 @@
 	"scopeName": "source.abell",
 	"patterns": [
 		{
+			"include": "#dynamic-markdown"
+		},
+		{
 			"include": "#highlight-components"
 		},
 		{
@@ -14,6 +17,40 @@
 		}
 	],
 	"repository": {
+		"dynamic-markdown": {
+			"begin": "<(AbellMarkdown)>",
+			"end": "</(AbellMarkdown)>",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.tag.begin.html"
+				},
+				"1": {
+					"name": "support.class"
+				},
+				"2": {
+					"name": "punctuation.definition.tag.end.html"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.tag.begin.html"
+				},
+				"1": {
+					"name": "support.class"
+				},
+				"2": {
+					"name": "punctuation.definition.tag.end.html"
+				}
+			},
+			"patterns": [
+				{
+					"include": "$self"
+				},
+				{
+					"include": "text.html.markdown"
+				}
+			]
+		},
 		"highlight-components": {
 			"begin": "</?([A-Z][A-Za-z]* ?)",
 			"end": "/?>",
