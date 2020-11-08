@@ -16,6 +16,8 @@ import { getCSSMode } from './modes/cssMode';
 import { getDocumentRegions, HTMLDocumentRegions } from './embeddedSupport';
 import { getHTMLMode } from './modes/htmlMode';
 import { getLanguageModelCache, LanguageModelCache } from './languageModelCache';
+import { getJSMode } from './modes/jsMode';
+import { getAbellMode } from './modes/abellMode';
 
 export * from 'vscode-html-languageservice';
 
@@ -56,6 +58,8 @@ export function getLanguageModes(): LanguageModes {
 	let modes = Object.create(null);
 	modes['html'] = getHTMLMode(htmlLanguageService);
 	modes['css'] = getCSSMode(cssLanguageService, documentRegions);
+	modes['javascript'] = getJSMode();
+	modes['abell'] = getAbellMode();
 
 	return {
 		getModeAtPosition(

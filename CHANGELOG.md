@@ -4,7 +4,11 @@ All notable changes to the "abell-syntax-highlight" extension will be documented
 
 ## Releases
 
-### 0.0.15
+### 0.1.0
+Major Update!
+- AutoComplete Component Names
+- AutoComplete important predefined variables of Abell.
+- Add support to recognize Abell region
 
 ### 0.0.14
 - Removed CSS errors and warnings (They were clashing with Abell syntax and idk how to fix :/)

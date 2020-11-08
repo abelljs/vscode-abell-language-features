@@ -22,7 +22,12 @@
         "0": {
           "name": "punctuation.definition.tag.end.html"
         }
-      }
+      },
+      "patterns": [
+        {
+          "include": "source.js"
+        }
+      ]
     },
     "highlight-js-literal": {
       "begin": "\\${",

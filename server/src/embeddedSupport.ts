@@ -5,6 +5,7 @@
 
 import { TextDocument, Position, LanguageService, TokenType, Range } from './languageModes';
 import { exec } from 'child_process';
+import { execRegexOnAll } from './helpers';
 
 export interface LanguageRange extends Range {
 	languageId: string | undefined;
@@ -81,6 +82,12 @@ export function getDocumentRegions(languageService: LanguageService, document: T
 		}
 		token = scanner.scan();
 	}
+
+	const { matches } = execRegexOnAll(/{{.*?}}/gs, document.getText());
+	for (const match of matches) {
+		regions.push({languageId: 'abell', start: match.index, end: match.index + match[0].length});
+	}
+
 	return {
 		getLanguageRanges: (range: Range) => getLanguageRanges(document, regions, range),
 		getEmbeddedDocument: (languageId: string, ignoreAttributeValues: boolean) => getEmbeddedDocument(document, regions, languageId, ignoreAttributeValues),
