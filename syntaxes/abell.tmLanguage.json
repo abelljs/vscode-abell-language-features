@@ -74,6 +74,10 @@
 					"name": "entity.other.attribute-name"
 				},
 				{
+					"match": "=",
+					"name": "punctuation.separator.key-value.html"
+				},
+				{
 					"include": "source.js"
 				}
 			]
