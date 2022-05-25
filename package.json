@@ -2,7 +2,7 @@
   "name": "abell-language-features",
   "displayName": "Abell Language Features",
   "description": "Syntax Highlighting for .abell files to help you make static sites even faster",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "publisher": "saurabh",
   "author": {
     "name": "saurabhdaware"
@@ -22,7 +22,7 @@
     "email": "saurabhdaware99@gmail.com"
   },
   "engines": {
-    "vscode": "^1.44.0"
+    "vscode": "^1.64.0"
   },
   "categories": [
     "Programming Languages",
