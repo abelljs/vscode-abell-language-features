@@ -18,20 +18,6 @@ export function getHTMLMode(htmlLanguageService: HTMLLanguageService): LanguageM
 			return 'html';
 		},
 		doComplete(document: TextDocument, position: Position) {
-			const abellCompletions = [];
-			const componentVariables = execRegexOnAll(
-				/(?:const|var|let) (\w*) *?= *?require\(["'`](.*?)\.abell["'`]\)/g,
-				document.getText()
-			);
-
-			for (const match of componentVariables.matches) {
-				abellCompletions.push({
-					label: match[1] + ' ',
-					kind: CompletionItemKind.Variable,
-					documentation: 'Custom Abell Component required from \'' + match[2] + '.abell\''
-				})
-			}
-
 			const htmlCompletions = htmlLanguageService.doComplete(
 				document,
 				position,
@@ -40,7 +26,7 @@ export function getHTMLMode(htmlLanguageService: HTMLLanguageService): LanguageM
 
 			return {
 				isIncomplete: htmlCompletions.isIncomplete,
-				items: [...htmlCompletions.items, ...abellCompletions]
+				items: htmlCompletions.items
 			};
 		},
 		onDocumentRemoved(_document: TextDocument) {},

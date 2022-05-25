@@ -2,7 +2,7 @@
 
 export const execRegexOnAll = (regex:RegExp, template:string) => {
   /** allMatches holds all the results of RegExp.exec() */
-	const allMatches = [];
+	const allMatches: any[] = [];
   let match:any = regex.exec(template);
   if (!match) {
     return { matches: [], input: template };
