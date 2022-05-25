@@ -1,9 +1,10 @@
 import { CompletionItemKind, TextDocument } from "vscode-languageserver"
 import { Position } from "vscode-languageserver-textdocument"
-import { compile } from 'abell/dist/vite-plugin-abell/compiler';
+import { } from 'typescript/lib/tsserverlibrary';
 import { execRegexOnAll } from "../helpers";
+import { LanguageMode } from "../languageModes";
 
-export function getAbellMode() {
+export function getAbellMode(): LanguageMode {
   return {
     getId() {
       return 'abell'
@@ -24,7 +25,10 @@ export function getAbellMode() {
 				})
 			}
 
-      return abellCompletions;
+      return {
+				isIncomplete: true,
+				items: abellCompletions
+			};
     },
     onDocumentRemoved(_document: TextDocument) {},
 		dispose() {}

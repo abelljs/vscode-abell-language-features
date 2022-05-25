@@ -7,23 +7,7 @@ export function getJSMode() {
       return 'javascript'
     },
     doComplete(document: TextDocument, position: Position) {
-      const isAbellComponent = document.getText().trim().startsWith('<AbellComponent');  
-      if (!isAbellComponent) {
-        return [];
-      }
-
-      return [
-        {
-          label: 'scopedSelector',
-          documentation: 'Like document.querySelector but selects element ensuring it is from the same component',
-          kind: CompletionItemKind.Function
-        },
-        {
-          label: 'scopedSelectorAll',
-          documentation: 'Like document.querySelectorAll but selects element ensuring it is from the same component',
-          kind: CompletionItemKind.Function
-        }
-      ]
+      return [];
     },
     onDocumentRemoved(_document: TextDocument) {},
 		dispose() {}
