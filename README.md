@@ -9,9 +9,7 @@ Syntax Highlighting for `.abell` files.
 
 - Syntax Highlighting for `.abell` files
 - Support for HTML blocks inside JavaScript strings inside Abell Blocks
-- Support for Abell Components
 - AutoComplete Component Names
-- AutoComplete important predefined variables of Abell.
 
 ## Release Notes
 
