@@ -4,6 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { getCSSLanguageService } from 'vscode-css-languageservice';
+// import { getDefaultCompilerOptions, getDefaultLibFilePath, LanguageServiceHost, sys, } from 'typescript';
+// import { createLanguageService as createTSLanguageService } from '@volar/typescript-language-service';
 import {
 	CompletionList,
 	Diagnostic,
@@ -47,6 +49,17 @@ export interface LanguageModeRange extends Range {
 export function getLanguageModes(): LanguageModes {
 	const htmlLanguageService = getHTMLLanguageService();
 	const cssLanguageService = getCSSLanguageService();
+	// @TODO add TS Language Service here
+	// const host: LanguageServiceHost = {
+	// 	getNewLine: () => sys.newLine,
+	// 	useCaseSensitiveFileNames: () => sys.useCaseSensitiveFileNames,
+	// 	getDirectories: sys.getDirectories,
+	// 	getCompilationSettings: getDefaultCompilerOptions,
+	// 	getDefaultLibFileName: getDefaultLibFilePath,
+	// 	getScriptFileNames: () => [],
+	// 	getScriptVersion: (filename: string) => '',
+	// };
+	// const tsLanguageService = createTSLanguageService(ts, host);
 
 	let documentRegions = getLanguageModelCache<HTMLDocumentRegions>(10, 60, document =>
 		getDocumentRegions(htmlLanguageService, document)

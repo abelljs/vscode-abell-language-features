@@ -1,3 +1,5 @@
+import { LanguageService as TSLanguageService } from '@volar/typescript-language-service';
+
 import { CompletionItemKind, TextDocument } from "vscode-languageserver"
 import { Position } from "vscode-languageserver-textdocument"
 
