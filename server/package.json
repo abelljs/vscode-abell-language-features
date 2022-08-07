@@ -12,6 +12,9 @@
 		"url": "https://github.com/Microsoft/vscode-extension-samples"
 	},
 	"dependencies": {
+		"@volar/typescript-language-service": "^0.39.4",
+		"abell": "^1.0.0-alpha.56",
+		"typescript": "^4.7.2",
 		"vscode-css-languageservice": "^4.1.1",
 		"vscode-html-languageservice": "^3.0.3",
 		"vscode-languageserver": "^6.1.1",

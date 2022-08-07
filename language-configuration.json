@@ -13,8 +13,6 @@
     ],
     // symbols that are auto closed when typing
     "autoClosingPairs": [
-        ["<AbellComponent>", "\n</AbellComponent>"],
-        ["<template>", "\n</template>"],
         ["{", "}"],
         ["[", "]"],
         ["(", ")"],

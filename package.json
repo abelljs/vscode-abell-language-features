@@ -1,95 +1,95 @@
 {
-    "name": "abell-language-features",
-    "displayName": "Abell Language Features",
-    "description": "Syntax Highlighting for .abell files to help you make static sites even faster",
-    "version": "0.1.2",
-    "publisher": "saurabh",
-    "author": {
-        "name": "saurabhdaware"
-    },
-    "icon": "images/logo-512.png",
-    "galleryBanner": {
-        "color": "#f9f9f9"
-    },
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/abelljs/vscode-abell-language-features.git"
-    },
-    "homepage": "https://github.com/abelljs/vscode-abell-language-features/blob/main/README.md",
-    "bugs": {
-        "url": "https://github.com/abelljs/vscode-abell-language-features/issues",
-        "email": "saurabhdaware99@gmail.com"
-    },
-    "engines": {
-        "vscode": "^1.44.0"
-    },
-    "categories": [
-        "Programming Languages",
-        "Snippets"
-    ],
-    "activationEvents": [
-        "onLanguage:abell"
-    ],
-    "main": "./client/out/extension",
-    "contributes": {
-        "languages": [
-            {
-                "id": "abell",
-                "aliases": [
-                    "Abell",
-                    "abell"
-                ],
-                "extensions": [
-                    ".abell"
-                ],
-                "configuration": "./language-configuration.json"
-            }
+  "name": "abell-language-features",
+  "displayName": "Abell Language Features",
+  "description": "Syntax Highlighting for .abell files to help you make static sites even faster",
+  "version": "1.0.0",
+  "publisher": "saurabh",
+  "author": {
+    "name": "saurabhdaware"
+  },
+  "icon": "images/logo-512.png",
+  "galleryBanner": {
+    "color": "#f9f9f9"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abelljs/vscode-abell-language-features.git"
+  },
+  "homepage": "https://github.com/abelljs/vscode-abell-language-features/blob/main/README.md",
+  "bugs": {
+    "url": "https://github.com/abelljs/vscode-abell-language-features/issues",
+    "email": "saurabhdaware99@gmail.com"
+  },
+  "engines": {
+    "vscode": "^1.64.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onLanguage:abell"
+  ],
+  "main": "./client/out/extension",
+  "contributes": {
+    "languages": [
+      {
+        "id": "abell",
+        "aliases": [
+          "Abell",
+          "abell"
         ],
-        "grammars": [
-            {
-                "path": "./syntaxes/html-injections.json",
-                "scopeName": "abell-in-html.injection",
-                "injectTo": [
-                    "source.abell"
-                ]
-            },
-            {
-                "path": "./syntaxes/js-injections.json",
-                "scopeName": "html-in-js.injection",
-                "injectTo": [
-                    "source.abell"
-                ]
-            },
-            {
-                "language": "abell",
-                "scopeName": "source.abell",
-                "path": "./syntaxes/abell.tmLanguage.json",
-                "embeddedLanguages": {
-                    "meta.embedded.block.javascript": "javascript"
-                }
-            }
+        "extensions": [
+          ".abell"
         ],
-        "snippets": [
-            {
-                "language": "abell",
-                "path": "./snippets/snippets.json"
-            }
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "path": "./syntaxes/html-injections.json",
+        "scopeName": "abell-in-html.injection",
+        "injectTo": [
+          "source.abell"
         ]
-    },
-    "scripts": {
-        "vscode:prepublish": "cd client && npm install && cd .. && npm run compile",
-        "compile": "tsc -b",
-        "watch": "tsc -b -w",
-        "postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
-        "test": "sh ./scripts/e2e.sh"
-    },
-    "devDependencies": {
-        "@types/mocha": "^5.2.7",
-        "@types/node": "^12.12.0",
-        "@typescript-eslint/eslint-plugin": "^3.0.2",
-        "@typescript-eslint/parser": "^3.0.2",
-        "eslint": "^7.1.0",
-        "typescript": "^3.9.4"
-    }
+      },
+      {
+        "path": "./syntaxes/js-injections.json",
+        "scopeName": "html-in-js.injection",
+        "injectTo": [
+          "source.abell"
+        ]
+      },
+      {
+        "language": "abell",
+        "scopeName": "source.abell",
+        "path": "./syntaxes/abell.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.javascript": "javascript"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "abell",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "cd client && npm install && cd .. && npm run compile",
+    "compile": "tsc -b",
+    "watch": "tsc -b -w",
+    "postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
+    "test": "sh ./scripts/e2e.sh"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.0",
+    "@typescript-eslint/eslint-plugin": "^3.0.2",
+    "@typescript-eslint/parser": "^3.0.2",
+    "eslint": "^7.1.0",
+    "typescript": "^3.9.4"
+  }
 }
