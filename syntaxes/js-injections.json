@@ -4,34 +4,101 @@
   "patterns": [
     {
       "include": "#highlight-html-block"
-    }
+    },
+		{
+			"include": "#markdown-overrides"
+		}
   ],
   "repository": {
-    "highlight-html-block": {
-			"begin": "/\\* *?html ?\\*/ *?`",
+		"markdown-overrides": {
+			"begin": "(md)(`)",
 			"end": "`",
 			"beginCaptures": {
-				"0": {
-					"name": "punctuation.definition.tag.begin.html"
+				"1": {
+					"name": "entity.name.function.js"
+				},
+				"2": {
+					"name": "punctuation.definition.string.template.begin.js"
 				}
 			},
 			"endCaptures": {
-				"0": {
-					"name": "punctuation.definition.tag.end.html"
+        "0": {
+          "name": "punctuation.definition.string.template.end.js"
+        }
+      },
+			"name": "source.abell.markdown",
+			"patterns": [
+				{
+					"match": "(#+)\\s+(.*?)$",
+					"name": "abell.heading.markdown",
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.heading.markdown"
+						},
+						"2": {
+							"name": "entity.name.section.markdown",
+							"patterns": [
+								{
+									"include": "text.html.markdown#inline"
+								},
+								{
+									"include": "text.html.derivative"
+								}
+							]
+						},
+						"3": {
+							"name": "punctuation.definition.heading.markdown"
+						}
+					}
+				},
+				{
+					"include": "text.html.markdown#inline"
+				},
+				{
+					"include": "text.html.markdown#fenced_code_block"
+				},
+				{
+					"include": "text.html.markdown#lists"
+				},
+				{
+					"include": "text.html.markdown#separator"
+				},
+				{
+					"include": "text.html.markdown#blockquote"
+				},
+				{
+					"include": "text.html.markdown#table"
+				}
+			]
+		},
+    "highlight-html-block": {
+			"begin": "(/\\* *?html ?\\*/ *?)(`)",
+			"end": "`",
+			"beginCaptures": {
+				"1": {
+					"name": "comment.block.documentation.js"
+				},
+				"2": {
+					"name": "punctuation.definition.string.template.begin.js"
 				}
 			},
+			"endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.template.end.js"
+        }
+      },
 			"patterns": [
 				{
 					"begin": "\\$\\{",
 					"end": "}",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.definition.tag.begin.html"
+							"name": "punctuation.definition.template-expression.begin.js"
 						}
 					},
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.tag.end.html"
+							"name": "punctuation.definition.template-expression.end.js"
 						}
 					},
 					"patterns": [

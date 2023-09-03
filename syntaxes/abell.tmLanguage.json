@@ -16,12 +16,12 @@
 			"end": "}}",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.tag.begin.html"
+					"name": "punctuation.definition.template-expression.begin.js"
 				}
 			},
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.tag.end.html"
+					"name": "punctuation.definition.template-expression.end.js"
 				}
 			},
 			"contentName": "meta.embedded.block.javascript",
