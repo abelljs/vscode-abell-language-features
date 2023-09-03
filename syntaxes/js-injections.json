@@ -11,8 +11,21 @@
   ],
   "repository": {
 		"markdown-overrides": {
-			"begin": "md`",
+			"begin": "(md)(`)",
 			"end": "`",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.function.js"
+				},
+				"2": {
+					"name": "punctuation.definition.string.template.begin.js"
+				}
+			},
+			"endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.template.end.js"
+        }
+      },
 			"name": "source.abell.markdown",
 			"patterns": [
 				{
@@ -59,30 +72,33 @@
 			]
 		},
     "highlight-html-block": {
-			"begin": "/\\* *?html ?\\*/ *?`",
+			"begin": "(/\\* *?html ?\\*/ *?)(`)",
 			"end": "`",
 			"beginCaptures": {
-				"0": {
-					"name": "punctuation.definition.tag.begin.html"
+				"1": {
+					"name": "comment.block.documentation.js"
+				},
+				"2": {
+					"name": "punctuation.definition.string.template.begin.js"
 				}
 			},
 			"endCaptures": {
-				"0": {
-					"name": "punctuation.definition.tag.end.html"
-				}
-			},
+        "0": {
+          "name": "punctuation.definition.string.template.end.js"
+        }
+      },
 			"patterns": [
 				{
 					"begin": "\\$\\{",
 					"end": "}",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.definition.tag.begin.html"
+							"name": "punctuation.definition.template-expression.begin.js"
 						}
 					},
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.tag.end.html"
+							"name": "punctuation.definition.template-expression.end.js"
 						}
 					},
 					"patterns": [

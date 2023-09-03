@@ -1,15 +1,15 @@
 {
   "name": "abell-language-features",
   "displayName": "Abell Language Features",
-  "description": "Syntax Highlighting for .abell files to help you make static sites even faster",
-  "version": "1.0.0",
+  "description": "Syntax Highlighting for .abell files. Learn more about Abell at https://abelljs.org/",
+  "version": "1.1.1",
   "publisher": "saurabh",
   "author": {
     "name": "saurabhdaware"
   },
   "icon": "images/logo-512.png",
   "galleryBanner": {
-    "color": "#f9f9f9"
+    "color": "#E7EBFD"
   },
   "license": "MIT",
   "repository": {
