@@ -15,12 +15,12 @@
       "end": "}}",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.definition.tag.begin.html"
+          "name": "punctuation.section.embedded"
         }
       },
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.tag.end.html"
+          "name": "punctuation.section.embedded"
         }
       },
       "patterns": [

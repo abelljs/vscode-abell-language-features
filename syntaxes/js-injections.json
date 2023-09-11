@@ -26,7 +26,7 @@
           "name": "punctuation.definition.string.template.end.js"
         }
       },
-			"name": "source.abell.markdown",
+			"name": "text.html.abell.markdown",
 			"patterns": [
 				{
 					"match": "(#+)\\s+(.*?)$",

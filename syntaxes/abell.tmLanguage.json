@@ -1,27 +1,22 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Abell",
-	"scopeName": "source.abell",
+	"scopeName": "text.html.abell",
 	"patterns": [
 		{
-			"include": "text.html.basic"
+			"include": "#highlight-abell-block"
 		},
 		{
-			"include": "#highlight-abell-block"
+			"include": "text.html.basic"
 		}
 	],
 	"repository": {
 		"highlight-abell-block": {
-			"begin": "(?<!\\\\){{",
-			"end": "}}",
-			"beginCaptures": {
+			"begin": "(?<!\\\\)\\{\\{",
+			"end": "\\}\\}",
+			"captures": {
 				"0": {
-					"name": "punctuation.definition.template-expression.begin.js"
-				}
-			},
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.definition.template-expression.end.js"
+					"name": "punctuation.section.embedded"
 				}
 			},
 			"contentName": "meta.embedded.block.javascript",

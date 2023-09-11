@@ -2,7 +2,7 @@
   "name": "abell-language-features",
   "displayName": "Abell Language Features",
   "description": "Syntax Highlighting for .abell files. Learn more about Abell at https://abelljs.org/",
-  "version": "1.1.1",
+  "version": "1.1.5",
   "publisher": "saurabh",
   "author": {
     "name": "saurabhdaware"
@@ -32,6 +32,7 @@
     "onLanguage:abell"
   ],
   "main": "./client/out/extension",
+  "browser": "./client/extension.web",
   "contributes": {
     "languages": [
       {
@@ -51,25 +52,31 @@
         "path": "./syntaxes/html-injections.json",
         "scopeName": "abell-in-html.injection",
         "injectTo": [
-          "source.abell"
+          "text.html.abell"
         ]
       },
       {
         "path": "./syntaxes/js-injections.json",
         "scopeName": "html-in-js.injection",
         "injectTo": [
-          "source.abell"
+          "text.html.abell"
         ]
       },
       {
         "language": "abell",
-        "scopeName": "source.abell",
+        "scopeName": "text.html.abell",
         "path": "./syntaxes/abell.tmLanguage.json",
         "embeddedLanguages": {
           "meta.embedded.block.javascript": "javascript"
         }
       }
     ],
+    "htmlLanguageParticipants": [
+      {
+        "languageId": "abell",
+        "autoInsert": true
+       }
+     ],
     "snippets": [
       {
         "language": "abell",
@@ -82,7 +89,8 @@
     "compile": "tsc -b",
     "watch": "tsc -b -w",
     "postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
-    "test": "sh ./scripts/e2e.sh"
+    "test": "sh ./scripts/e2e.sh",
+    "open-in-browser": "vscode-test-web --extensionDevelopmentPath=."
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",
@@ -90,6 +98,7 @@
     "@typescript-eslint/eslint-plugin": "^3.0.2",
     "@typescript-eslint/parser": "^3.0.2",
     "eslint": "^7.1.0",
-    "typescript": "^3.9.4"
+    "typescript": "^3.9.4",
+    "@vscode/test-web": "*"
   }
 }
