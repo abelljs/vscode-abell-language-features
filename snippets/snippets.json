@@ -9,7 +9,7 @@
   "Abell-Declaration Block": {
     "prefix": "declaration",
     "body": [
-      "{{\n\t/** @declaration */\n\n\t$0\n}}"
+      "{{\n\t/** @declaration */\n\t$0\n}}"
     ],
     "description": "Declaration block to declare variables in abell"
 
