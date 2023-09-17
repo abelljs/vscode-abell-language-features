@@ -5,5 +5,13 @@
       "<html>\n<body>\n  {{ $1 }}\n</body>\n</html>"
     ],
     "description": "Start HTML page with Abell Template"
+  },
+  "Abell-Declaration Block": {
+    "prefix": "declaration",
+    "body": [
+      "{{\n\t/** @declaration */\n\t$1\n}}"
+    ],
+    "description": "Declaration block to declare variables in abell"
+
   }
 }

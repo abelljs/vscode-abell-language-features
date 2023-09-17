@@ -1,8 +1,73 @@
-import { CompletionItemKind, TextDocument } from "vscode-languageserver"
+import { CompletionItem, CompletionItemKind, Range, TextDocument } from "vscode-languageserver"
 import { Position } from "vscode-languageserver-textdocument"
 import { } from 'typescript/lib/tsserverlibrary';
 import { execRegexOnAll } from "../helpers";
 import { LanguageMode } from "../languageModes";
+
+const builtInJSFunctions: (CompletionItem & {on?: string})[] = [
+	{
+		label: '/** @declaration */',
+		insertText: '/** @declaration */',
+		filterText: 'declaration',
+		kind: CompletionItemKind.Keyword,
+		documentation: 'Use this to declare Abell block as variable declaration block'
+	},
+	{
+		label: 'console.log',
+		kind: CompletionItemKind.Function,
+		documentation: 'console.log from javascript (logs in your terimnal)'
+	},
+	{
+		label: 'setTimeout',
+		kind: CompletionItemKind.Function
+	},
+	{
+		label: 'setInterval',
+		kind: CompletionItemKind.Function
+	},
+	{
+		label: 'clearTimeout',
+		kind: CompletionItemKind.Function
+	},
+	{
+		label: 'clearInterval',
+		kind: CompletionItemKind.Function
+	},
+	{
+		label: 'props',
+		kind: CompletionItemKind.Variable
+	},
+	{
+		label: 'Object',
+		kind: CompletionItemKind.Variable
+	},
+	{
+		on: 'Object.',
+		label: 'values',
+		kind: CompletionItemKind.Function,
+	},
+	{
+		on: 'Object.',
+		label: 'keys',
+		kind: CompletionItemKind.Function,
+	},
+	{
+		on: '.',
+		label: 'map',
+		kind: CompletionItemKind.Function,
+	},
+	{
+		on: '.',
+		label: 'filter',
+		kind: CompletionItemKind.Function,
+	},
+	{
+		on: '.',
+		label: 'reduce',
+		kind: CompletionItemKind.Function,
+	}
+]
+
 
 export function getAbellMode(): LanguageMode {
   return {
@@ -25,9 +90,24 @@ export function getAbellMode(): LanguageMode {
 				})
 			}
 
+			const globalBuiltIns = builtInJSFunctions.filter((built) => !built.on)
+			const onProps = builtInJSFunctions.filter(
+				(built) => {
+					const getText = (on: string) => document.getText(
+						Range.create(
+							{ line: position.line, character: 0},
+							position
+						)
+					)
+
+					return built.on && getText(built.on).trim().includes(built.on)
+				}
+					
+			)
+
       return {
 				isIncomplete: true,
-				items: abellCompletions
+				items: [...globalBuiltIns, ...abellCompletions, ...onProps]
 			};
     },
     onDocumentRemoved(_document: TextDocument) {},
