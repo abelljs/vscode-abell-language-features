@@ -2,14 +2,14 @@
   "Abell-HTML Block": {
     "prefix": "html",
     "body": [
-      "<html>\n<body>\n  {{ $1 }}\n</body>\n</html>"
+      "<html>\n<body>\n  {{ $0 }}\n</body>\n</html>"
     ],
     "description": "Start HTML page with Abell Template"
   },
   "Abell-Declaration Block": {
     "prefix": "declaration",
     "body": [
-      "{{\n\t/** @declaration */\n\t$1\n}}"
+      "{{\n\t/** @declaration */\n\n\t$0\n}}"
     ],
     "description": "Declaration block to declare variables in abell"
 

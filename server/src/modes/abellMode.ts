@@ -18,6 +18,14 @@ const builtInJSFunctions: (CompletionItem & {on?: string})[] = [
 		documentation: 'console.log from javascript (logs in your terimnal)'
 	},
 	{
+		label: 'import',
+		kind: CompletionItemKind.Keyword,
+	},
+	{
+		label: 'from',
+		kind: CompletionItemKind.Keyword,
+	},
+	{
 		label: 'setTimeout',
 		kind: CompletionItemKind.Function
 	},
@@ -64,6 +72,31 @@ const builtInJSFunctions: (CompletionItem & {on?: string})[] = [
 	{
 		on: '.',
 		label: 'reduce',
+		kind: CompletionItemKind.Function,
+	},
+	{
+		on: '.',
+		label: 'toUpperCase',
+		kind: CompletionItemKind.Function,
+	},
+	{
+		on: '.',
+		label: 'toLowerCase',
+		kind: CompletionItemKind.Function,
+	},
+	{
+		on: '.',
+		label: 'includes',
+		kind: CompletionItemKind.Function,
+	},
+	{
+		on: '.',
+		label: 'startsWith',
+		kind: CompletionItemKind.Function,
+	},
+	{
+		on: '.',
+		label: 'endsWith',
 		kind: CompletionItemKind.Function,
 	}
 ]
